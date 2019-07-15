@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+pair<int,int>的最长递增子序列；
+后面一个pair中的两个数要分别比前面一个pair的两个数大
+
+测试样例：
+[[1,2],[3,4],[5,6],[7,8]],4
+返回：4
+
+ */
+
+class Stack {
+public:
+    int getHeight(vector<vector<int> > actors, int n) {
+        if(actors.empty()) return 0;
+        sort(actors.begin(),actors.end(),[](vector<int> &l,vector<int>& r){
+            return l[0]<r[0] || (l[0]==r[0] && l[1]<r[1]);
+        });
+
+        vector<int> dp(n,1);
+        int ret=1;
+        for(int i=1;i<n;++i){
+            for(int j=0;j<i;++j){
+                if(actors[j][0]>=actors[i][0]) continue;
+                if(actors[j][1]<actors[i][1]){
+                    dp[i]=max(dp[i],dp[j]+1);
+                }
+            }
+            ret=max(ret,dp[i]);
+        }
+
+        return ret;
+    }
+};
+
+
