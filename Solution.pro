@@ -39,4 +39,5 @@ HEADERS += \
     code_interview/环形链表的入口 \
     组成目标和的个数 \
     寻找重复数 \
-    子集和为sum的个数
+    子集和为sum的个数 \
+    code_interview/删除链表中的所有重复节点.h
