@@ -145,52 +145,6 @@ root->left->right=new TreeNode(5);
 root->right->left=new TreeNode(10);
 root->right->right=new TreeNode(12);
 
+华为简历编号
 
-#include <bits/stdc++.h>
-
-using namespace std;
-
-int main(){
-    int n;
-    cin>>n;
-    vector<int> love;
-    vector<vector<int>> dp(n,vector<int>(INT_MAX,0));
-    for(int i=0;i<n;++i){
-        int temp;
-        cin>>temp;
-        love.push_back(temp);
-        dp[i][temp]++;
-    }
-
-    int q;
-    cin>>q;
-    vector<vector<int> >  res;
-    for(int i=0;i<q;++i){
-        int l,r,k;
-        cin>>l>>r>>k;
-        vector<int> v={l-1,r-1,k};
-        res.push_back(v);
-    }
-
-    for(int i=0;i<res.size();++i){
-        int start=res[i][0]-1;
-        if(start<0) start=0;
-        if(start>=n) start=n-1;
-
-        int end=res[i][1];
-        if(end<0) end=0;
-        if(end>=n-1) end=n-1;
-        int val=res[i][2];
-
-        if(start>=end) {
-            cout<<0<<endl;
-            continue;
-        }
-        int big=dp[end][val];
-        int small=dp[start][val];
-
-        cout<<big-small<<endl;
-    }
-    return 0;
-}
-
+C20190616000284

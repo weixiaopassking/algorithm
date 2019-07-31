@@ -23,7 +23,7 @@ Output: -1
 Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 
 思路：BFS
-bfs的队列中保存的元素为pair<string,int>,int对应找到string走了多少步
+bfs的队列中保存的元素为 pair<string,int>, int对应找到string走了多少步
 用 unordered_set 来标记是否已经访问过当前字符串
 当广度优先搜索发现目标字符串时，直接返回以前搜索的步数，就是答案
 如果没有访问过，将字符串和对应步数加入队列
