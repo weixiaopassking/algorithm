@@ -18,7 +18,7 @@ public:
         // 1.我们从nums[0]进入
         // 2.用快慢指针找到这个环里面的相遇点
         // 3.双指针法，一个从头开始走，一个从相遇点开始走，
-        //   最终一定相遇相爱节点入口处
+        //   最终一定相遇在节点入口处
     int findDuplicate(vector<int>& nums) {
         int slow=nums[0];
         int fast=nums[nums[0]];

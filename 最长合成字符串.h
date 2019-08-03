@@ -26,7 +26,6 @@ public:
             }
         }
         return false;
-
     }
 
     int getLongest(vector<string> str, int n) {

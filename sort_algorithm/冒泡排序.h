@@ -8,12 +8,12 @@ using namespace std;
 空间O(1),稳定
 */
 
-void BubbleSort( vector<int>& A, int N ){
-    for ( int P=N-1; P>=0; P-- ){
+void BubbleSort( vector<int>& array, int len ){
+    for ( int idx=len-1; idx>=0; idx-- ){
         int flag = 0;
-        for( int i=0; i<P; i++ ) { /* 一趟冒泡 */
-            if ( A[i] > A[i+1] ) {
-                swap(A[i], A[i+1]);
+        for( int i=0; i<idx; i++ ) { /* 一趟冒泡 */
+            if ( array[i] > array[i+1] ) {
+                swap(array[i], array[i+1]);
                 flag = 1; /* 标识发生了交换 */
             }
         }

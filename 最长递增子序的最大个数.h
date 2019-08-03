@@ -28,6 +28,7 @@ public:
         if(nums.empty()) return cnt;
         int n=nums.size(),maxlen=1;
         vector<int> length(n,1),count(n,1);
+
         for(int j=1;j<n;j++){
             for(int i=0;i<j;i++){
                 if(nums[i]<nums[j]){

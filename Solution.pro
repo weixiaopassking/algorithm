@@ -5,11 +5,8 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    main.cpp
 
 DISTFILES += \
-
-
 
 
 
@@ -18,28 +15,14 @@ HEADERS += \
     Singleton \
     testExample \
     solution.h \
-    WordLadder \
     solution.h \
     solution.h \
     MinSwapCouple.h \
     HorseMatch.h \
-    数据流的中位数 \
-    最大子矩阵的和 \
-    最大子方阵 \
     code_interview/从1到n中1出现的次数 \
-    最长递增子序的最大个数 \
-    最长递增子序列 \
     code_interview/数组中只出现一次的数字 \
     code_interview/二叉树平衡检查 \
-    最长递增子序列-2 \
-    数组中的第K个最大元素 \
-    N皇后解的个数问题 \
-    全排列_含重复数字 \
-    全排列_无重复数字 \
     code_interview/环形链表的入口 \
-    组成目标和的个数 \
-    寻找重复数 \
-    子集和为sum的个数 \
     code_interview/删除链表中的所有重复节点.h \
     code_interview/丑数_第k个数.h \
     被围绕的区域.h \
@@ -87,4 +70,32 @@ HEADERS += \
     sort_algorithm/选择排序.h \
     朋友圈问题.h \
     graph_algorithm/dfs.h \
-    tree_algorithm/先序遍历.h
+    tree_algorithm/先序遍历.h \
+    叶子相似的树.h \
+    tree_algorithm/中序遍历.h \
+    tree_algorithm/层序遍历.h \
+    tree_algorithm/后序遍历.h \
+    组合总和.h \
+    无重复字符的最长子串.h \
+    零零零.h \
+    背包问题.h \
+    graph_algorithm/bfs.h \
+    graph_algorithm/topological_sort.h \
+    graph_algorithm/dijstra.h \
+    graph_algorithm/floyd.h \
+    单词接龙.h \
+    子集和为sum的个数.h \
+    最长递增子序列-2.h \
+    单词接龙-2.h \
+    最长递增子序列.h \
+    最长递增子序的最大个数.h \
+    全排列_含重复数字.h \
+    全排列_无重复数字.h \
+    寻找重复数.h \
+    数组中的第K个最大元素.h \
+    数据流的中位数.h \
+    最大子方阵.h \
+    最大子矩阵的和.h \
+    组成目标和的个数.h \
+    N皇后解的个数问题.h \
+    最大公约数.h
