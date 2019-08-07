@@ -4,7 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp \
+    mainx.cpp \
+    main.cpp
 
 DISTFILES += \
 
@@ -98,4 +99,9 @@ HEADERS += \
     最大子矩阵的和.h \
     组成目标和的个数.h \
     N皇后解的个数问题.h \
-    最大公约数.h
+    最大公约数.h \
+    中序遍历的下一个节点.h \
+    graph_algorithm/spfa.h \
+    graph_algorithm/bellman.h \
+    基本计算器-1.h \
+    基本计算器-2.h

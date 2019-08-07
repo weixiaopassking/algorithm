@@ -1,29 +1,62 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h>
+using namespace  std;
 
-/*
-struct ListNode {
-    int val;
-    struct ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};*/
-class Palindrome {
+class Solution {
 public:
-    bool isPalindrome(ListNode* pHead) {
-        // write code here
+    int calculate(string s) {
+        if(s.empty()) return 0;
+
+        int num=0;
+        stack<int> stk;
         stack<int> st;
-        ListNode* cur=pHead;
-        while(!cur){
-            st.push(cur->val);
-            cur=cur->next;
+        char op='+';
+
+        for(int i=0;i<=s.size();++i){
+            char c;
+            if(i<s.size())  c=s[i];
+            else c='+';
+
+            if(c==' '){
+                continue;
+            }
+
+            if(c>='0' && c<='9'){
+                num=num*10-'0'+c;
+                continue;
+            }else if(c=='('){
+                if(op=='+'){
+                    st.push(1);
+                    continue;
+                }
+                else if(op=='-') {
+                    st.push(-1);
+                    flag=!flag;
+                    op='+';
+                    continue;
+                }
+            }else if( c==')'){
+                st.pop();
+            }else if(op=='+'){
+                if(!st.empty()) num=num*st.top();
+                stk.push(num);
+            }else if(op=='-'){
+                if(!st.empty()) num=num*st.top();
+                stk.push(-num);
+            }
+            num=0;
+            op=c;
         }
-        cur=pHead;
-        int sz=st.size();
-        for(int i=0;i<sz;++i){
-            if(st.top()!=cur->val) return false;
-            st.pop();
-            cur=cur->next;
+
+        int ret=0;
+        while(!stk.empty()){
+            ret+=stk.top();stk.pop();
         }
-        return true;
+        return ret;
     }
 };
+
+int main(){
+    Solution s;
+    cout<<s.calculate("(1+(4+5+2)-3)+(6+8)")<<endl;
+    return 0;
+}
