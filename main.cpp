@@ -1,62 +1,57 @@
-#include <bits/stdc++.h>
-using namespace  std;
+#include<bits/stdc++.h>
+using namespace std;
 
-class Solution {
-public:
-    int calculate(string s) {
-        if(s.empty()) return 0;
+unordered_map<int,int> resmp;
+unordered_map<int,int> cnt;
 
-        int num=0;
-        stack<int> stk;
-        stack<int> st;
-        char op='+';
-
-        for(int i=0;i<=s.size();++i){
-            char c;
-            if(i<s.size())  c=s[i];
-            else c='+';
-
-            if(c==' '){
-                continue;
-            }
-
-            if(c>='0' && c<='9'){
-                num=num*10-'0'+c;
-                continue;
-            }else if(c=='('){
-                if(op=='+'){
-                    st.push(1);
-                    continue;
-                }
-                else if(op=='-') {
-                    st.push(-1);
-                    flag=!flag;
-                    op='+';
-                    continue;
-                }
-            }else if( c==')'){
-                st.pop();
-            }else if(op=='+'){
-                if(!st.empty()) num=num*st.top();
-                stk.push(num);
-            }else if(op=='-'){
-                if(!st.empty()) num=num*st.top();
-                stk.push(-num);
-            }
-            num=0;
-            op=c;
-        }
-
-        int ret=0;
-        while(!stk.empty()){
-            ret+=stk.top();stk.pop();
-        }
-        return ret;
+int c(int down,int up){
+    int res=1;
+    for(int i=0;i<up;++i){
+        res=res*down;
+        down--;
     }
-};
+
+    while (up>0) {
+        res=res/up;
+        up--;
+    }
+}
+
 
 int main(){
-    Solution s;
-    cout<<s.calculate("(1+(4+5+2)-3)+(6+8)")<<endl;
+    int n;
+    cin>>n;
+    vector<int> num(n);
+    int mymax=INT_MIN;
+    double total=1.0;
+    for(int i=0;i<n;++i){
+        cin>>num[i];
+        mymax=max(mymax,num[i]);
+        total=total*num[i];
+        cnt[num[i]]++;
+    }
+
+    int val=0;
+    for(int i=mymax;i>=1;--i){
+        val=+cnt[i];
+        int curres=0;
+        for(int j=1;j<=val;++j){
+            curres+=c(val,j);
+        }
+        resmp[i]=curres*(total-val);
+    }
+    resmp[1]=1;
+
+    double res=0.0;
+    for(int i=1;i<=mymax;++i){
+        res=res+i*resmp[i];
+    }
+    res=res/total;
+
+    printf("%.2f\n",res);
+
     return 0;
+
 }
+
+

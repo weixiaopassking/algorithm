@@ -20,11 +20,13 @@ public:
     unordered_set<int> st;
 
     void helper(int n){
-        for(int i=0;i<cur.size();++i){
-            for(int j=i+1;j<cur.size();++j){
-                if(abs(i-j)==abs(cur[i]-cur[j])){
-                    return;
-                }
+        // ！！！这里要注意的两个问题
+        // for循环内直接用cur.size()-1替换index,会让循环结束条件成为INT_MAX=(-1),
+        // 只需要一次循环，判断最近插入的和前面已经插入的是否违反条件
+        int index=cur.size()-1;
+        for(int i=0;i<index;++i){
+            if(abs(i-index)==abs(cur[i]-cur[index])){
+                return;
             }
         }
 
@@ -51,3 +53,4 @@ public:
         return cnt;
     }
 };
+

@@ -27,8 +27,12 @@ void merge(vector<int>& array,vector<int>& copy,int start,int rightstart,int end
 
 void mergeSort(vector<int>& array,vector<int>& copy,int start,int end){
     if(start>=end) return;
+
     int mid=start+(end-start)/2;
-    mergeSort(array,,copy,start,mid);
+    mergeSort(array,copy,start,mid);
     mergeSort(array,copy,mid+1,end);
     merge(array,copy,start,mid+1,end);
 }
+
+
+// 归并算法的递归实现

@@ -4,8 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    mainx.cpp \
-    main.cpp
+    main.cpp \
+    empty.cpp
 
 DISTFILES += \
 
@@ -20,10 +20,6 @@ HEADERS += \
     solution.h \
     MinSwapCouple.h \
     HorseMatch.h \
-    code_interview/从1到n中1出现的次数 \
-    code_interview/数组中只出现一次的数字 \
-    code_interview/二叉树平衡检查 \
-    code_interview/环形链表的入口 \
     code_interview/删除链表中的所有重复节点.h \
     code_interview/丑数_第k个数.h \
     被围绕的区域.h \
@@ -88,7 +84,6 @@ HEADERS += \
     子集和为sum的个数.h \
     最长递增子序列-2.h \
     单词接龙-2.h \
-    最长递增子序列.h \
     最长递增子序的最大个数.h \
     全排列_含重复数字.h \
     全排列_无重复数字.h \
@@ -104,4 +99,41 @@ HEADERS += \
     graph_algorithm/spfa.h \
     graph_algorithm/bellman.h \
     基本计算器-1.h \
-    基本计算器-2.h
+    基本计算器-2.h \
+    逆波兰表达式求值.h \
+    最长回文子串.h \
+    最接近的数.h \
+    洪水.h \
+    堆箱子.h \
+    矩阵元素查找.h \
+    字符串相乘.h \
+    time_of_algorithm.h \
+    维护x的秩.h \
+    数字发音.h \
+    数组中的逆序对.h \
+    code_interview/从1到n中1出现的次数.h \
+    code_interview/二叉树平衡检查.h \
+    code_interview/环形链表的入口.h \
+    code_interview/数组中只出现一次的数字.h \
+    递归逆序一个栈.h \
+    KMP算法.h \
+    不重复打印排序数组中相加和为给定值的所有三元组.h \
+    生成窗口最大值数组.h \
+    未排序数组中累加和为给定值的最长子数组长度.h \
+    未排序数组中正数和负数个数相等的最长数组.h \
+    未排序数组中0和1个数相等的最长数组.h \
+    未排序正数数组中累加和为给定值的最长子数组的长度.h \
+    最长递增子序列-3.h \
+    最长递增子序列-1.h \
+    分割数组的最大值.h \
+    求最大子矩阵的大小.h \
+    最大值减去最小值小于或等于num的子数组数量.h \
+    code_interview/从0到n中2出现的次数.h \
+    换钱的最少货币数.h \
+    换钱的方法数.h \
+    最长公共子序列.h \
+    最长公共子串.h \
+    数组中子数组的最大累乘积.h \
+    不包含本位置值的累乘数组.h \
+    求最短通路值.h \
+    Manacher.h

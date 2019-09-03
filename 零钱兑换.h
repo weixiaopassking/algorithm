@@ -18,10 +18,41 @@ leetcode 322. 零钱兑换
 说明:
 你可以认为每种硬币的数量是无限的。
 
-思路：
-
 */
 
+
+// 做法1(复杂度低)：
+// 把所有的钱能够凑成的总数作为状态i，dp[i]表示凑成i金额的钱币的数目
+// 内循环为给的不同钱币，新增一种不同面值的钱，就去更新大于该币种的所有状态
+int main(){
+    int n,aim;
+    cin>>n>>aim;
+    vector<int> data(n,0);
+    for(int i=0;i<n;i++){
+        cin>>data[i];
+    }
+
+    vector<int> dp(aim+1,aim+1);
+    dp[0]=0;
+    for(int i=0;i<n;i++){
+        for(int j=data[i];j<=aim;j++){
+            dp[j]=min(dp[j],dp[j-data[i]]+1);
+        }
+    }
+
+    if(dp[aim]==aim+1){
+        cout<<"-1"<<endl;
+    }else{
+        cout<<dp[aim]<<endl;
+    }
+
+    return 0;
+}
+
+
+// 做法2(复杂度会高一些)：
+// 把所有的钱能够凑成的总数作为状态i，dp[i]表示凑成i金额的钱币的数目
+// 状态i作为外循环，内循环是不同的钱币，一次内循环确定状态i最少的钱币数，直到amount
 class Solution {
 public:
     vector<int> dp;

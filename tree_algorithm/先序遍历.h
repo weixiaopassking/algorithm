@@ -10,8 +10,8 @@ using namespace std;
 void PreOrderRe( TreeNode* root ){
     if(!root) return;
     printf("%d", root->val);
-    PreOrder( root->left );
-    PreOrder( root->right );
+    PreOrderRe( root->left );
+    PreOrderRe( root->right );
 }
 
 // 非递归写法

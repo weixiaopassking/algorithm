@@ -9,8 +9,8 @@ using namespace std;
 
 void PostOrderRe( TreeNode* root ){
     if(!root) return;
-    PreOrder( root->left );
-    PreOrder( root->right);
+    PostOrderRe( root->left );
+    PostOrderRe( root->right);
     printf("%d ", root->val);
 }
 
