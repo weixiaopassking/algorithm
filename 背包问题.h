@@ -6,10 +6,6 @@ https://blog.csdn.net/qq_38410730/article/details/81667885
 
 */
 
-#include<iostream>
-using namespace std;
-#include <algorithm>
-
 int main()
 {
     int w[5] = { 0 , 2 , 3 , 4 , 5 };		//商品的体积2、3、4、5

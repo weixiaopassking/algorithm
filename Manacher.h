@@ -1,6 +1,6 @@
-
 #include<bits/stdc++.h>
 using namespace std;
+
 /*
 Manacher算法求解最大回文串的长度
  */

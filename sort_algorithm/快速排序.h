@@ -20,8 +20,8 @@ void quicksort_re( vector<int>& array, int left, int right ){
         if ( i < j ){
             swap( array[i], array[j] );
             i++;j--;
-        }
-        else break;
+        }else
+            break;
     }
     swap( array[i], array[right] );
     quicksort_re( array, left, i-1 );
@@ -39,8 +39,7 @@ int Pritation(vector<int>& a, int left, int right)
         return -1;
     int priot = a[left];
     int i = left, j = right;
-    while (i < j)
-    {
+    while (i < j){
         while (i < j && a[j] >= priot)
             j--;
         if(i<j)
@@ -69,21 +68,17 @@ void quickSort(vector<int>& a, int left,int right)
         temp.pop();
         j = temp.top();//再弹出右指针
         temp.pop();
-        if (i < j)
-        {
+        if (i < j){
             int k = Pritation(a, i, j);
-            if (k > i)
-            {
+            if (k > i){
                 temp.push(k - 1);//保存中间变量
                 temp.push(i);  //保存中间变量
             }
-            if (j > k)
-            {
+            if (j > k){
                 temp.push(j);
                 temp.push(k + 1);
             }
         }
-
     }
 }
 

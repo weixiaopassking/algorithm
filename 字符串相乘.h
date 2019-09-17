@@ -49,7 +49,6 @@ public:
             if(carry!=0) str=to_string(carry)+str;
             for(int k=0;k<num2.size()-1-i;++k) str+='0';
             stringadd(res,str);
-
         }
         return res;
     }
