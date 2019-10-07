@@ -45,3 +45,42 @@ public:
 };
 
 
+
+// 以下是用pair的二分查找实现的方法
+// 不断扩大dp数组的大小
+int main(){
+    int n;
+    cin>>n;
+    vector<vector<int>> arr(n,vector<int>(2,0));
+    for(int i=0;i<n;++i){
+        cin>>arr[i][0]>>arr[i][1];
+    }
+
+    // ！！！下面l[0]==r[0] && l[1]>r[1]这一步很关键，从大到小
+    sort(arr.begin(),arr.end(),[](vector<int> l,vector<int> r){
+        bool ret=(l[0]<r[0]) || (l[0]==r[0] && l[1]>r[1]);
+        return ret;
+    });
+
+    vector<vector<int>> dp(1,arr[0]);
+
+    for(int i=1;i<n;++i){
+        int low=0;
+        int high=dp.size();
+        while(low<high){
+            int mid=low+(high-low)/2;
+            if(dp[mid][0]<=arr[i][0] && dp[mid][1]<=arr[i][1])
+                low=mid+1;
+            else
+                high=mid;
+        }
+
+        if(high<dp.size())  dp[high]=arr[i];
+        else dp.push_back(arr[i]);
+    }
+
+    cout<<dp.size()<<endl;
+
+    return 0;
+}
+

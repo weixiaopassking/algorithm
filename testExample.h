@@ -145,6 +145,3 @@ root->left->right=new TreeNode(5);
 root->right->left=new TreeNode(10);
 root->right->right=new TreeNode(12);
 
-华为简历编号
-
-C20190616000284
