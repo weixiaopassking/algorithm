@@ -26,7 +26,6 @@ n>1时，f(n,m)=[f(n-1,m)+m]%n
 class Joseph {
 public:
     int getResult(int n, int m) {
-        // write code here
         if(n<=0 || m<=0) return 0;
         int cur=0;
         for(int i=2;i<=n;++i){
